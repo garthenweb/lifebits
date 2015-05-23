@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/garthenweb/lifebits#readme",
   "devDependencies": {
-    "grunt": "^0.4.4",
+    "grunt": "^0.4.5",
     "grunt-autoprefixer": "^3.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-connect": "^0.10.1",

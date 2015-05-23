@@ -1,9 +1,32 @@
 .stage {
   position: relative;
+  font-size: 22px;
+  min-height: 750px;
   .stage-background {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    .stage-background-img {
+      position: absolute;
+      min-height: 750px;
+      left: 50%;
+      transform: translate(-50%,0);
+    }
+  }
+  .stage-headline {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 75px;
+    max-width: 75%;
     position: absolute;
-    top: 0;
+    top: 45%;
     left: 0;
+    .box-shadow {
+      background: #fff;
+      span {
+        box-shadow: 20px 0 0 #fff, -200px 0 0 #fff;
+      }
+    }
   }
   .stage-profile {
     position: absolute;
@@ -23,9 +46,20 @@
     padding: 0 70px 0 20px;
     height: 44px;
     border-radius: 22px;
-    background: #fff;
+    background: rgba(255,255,255,0.75);
     position: absolute;
     top: 4px;
     right: 0;
+  }
+  .stage-player {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    width: 100%;
+    height: 166px;
+    box-shadow: 100px 200px 0px 200px #fff;
+  }
+  .rotate {
+    transform: rotate(-20deg);
   }
 }

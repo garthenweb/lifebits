@@ -1,0 +1,33 @@
+.log-activity {
+  font-size: 22px;
+  li {
+    position: relative;
+    margin: 0 100px 20px;
+    line-height: 48px;
+    height: 48px;
+    text-align: right;
+    &:after {
+      content: "";
+      position: absolute;
+      height: 48px;
+      width: 48px;
+      top: 0;
+      right: -70px;
+    }
+  }
+  .log-activity-steps {
+    &:after {
+      background: #666;
+    }
+  }
+  .log-activity-sleep {
+    &:after {
+      background: #888;
+    }
+  }
+  .log-activity-distance {
+    &:after {
+      background: #aaa;
+    }
+  }
+}

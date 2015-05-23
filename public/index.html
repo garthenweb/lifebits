@@ -6,24 +6,35 @@
     <meta charset="utf8">
     <title>LifeBits</title>
     <link href="/css/main.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,600,300' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 
 <header class="contain-to-grid">
     <div class="row stage">
-            <img class="stage-background" src="http://placehold.it/1400x788">
-            <h1 class="stage-headline">Hello World</h1>
+        <figure class="stage-background">
+            <img class="stage-background-img" src="http://lorempixel.com/1400/788/">
+        </figure>
+            <h1 class="stage-headline rotate"><span class="box-shadow"><span>Geil, ein Hackathon! Da bin ich voll dabei!</span></span></h1>
             <figure class="stage-profile small-4">
                 <figcaption class="stage-profile-name">Profil Name</figcaption>
-                <img class="stage-profile-img" src="http://placehold.it/150x150/d00">
+                <img class="stage-profile-img" src="http://lorempixel.com/45/45/people">
             </figure>
+        <div class="stage-player rotate">
+            <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/25440642&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        </div>
     </div>
 </header>
 
 <main>
     <div class="row">
-        <div class="small-12 columns">
+        <div class="small-4 small-offset-8 end columns">
+            <ul class="log-activity">
+                <li class="log-activity-steps">6543</li>
+                <li class="log-activity-sleep">8h</li>
+                <li class="log-activity-distance">8.2km</li>
+            </ul>
         </div>
     </div>
 </main>
