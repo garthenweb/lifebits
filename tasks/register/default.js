@@ -6,8 +6,8 @@ module.exports = function(grunt) {
     'clean:assets',
     'copy:vendor',
     'sync:dev',
-    'connect',
+    // 'connect',
     // 'karma:dev:start',
-    'watch'
+    'concurrent:dev'
   ]);
 };

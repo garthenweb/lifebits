@@ -27,3 +27,11 @@ build/Release
 node_modules
 .tmp
 public/bower_components
+config/locals.js
+server.crt
+server.csr
+server.key
+server.key.org
+ca.key
+ca.csr
+ca.crt
