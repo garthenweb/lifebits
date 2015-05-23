@@ -1,4 +1,18 @@
+/**
+ * Settings
+ * colors and other variables
+ */
+@import "foundation/scss/foundation/functions";
+@import "settings";
+
+/**
+ * Foundation - Default styles for common elements
+ */
+// hack to let foundation believe the global styles are already loaded
+// (we dont want them to be included)
+$modules: ("global");
+@import "foundation/scss/foundation";
+
 @import "_mixin";
-@import "_settings";
 @import "_base";
 @import "_layout";
