@@ -12,10 +12,16 @@ module.exports = function(grunt) {
       options: { livereload: true, atBegin: true, spawn: false }
     },
 
-    // js: {
-    //   files: '<%= pkg.paths.tmp %>/<%= pkg.paths.source %>/js/{,*/}*.js',
-    //   options: { livereload: true, spawn: false }
-    // },
+    es6: {
+      files: '<%= pkg.paths.source %>/js/**/{,*/}*.js',
+      tasks: ['browserify:dev'],
+      options: { atBegin: true }
+    },
+
+    js: {
+      files: '<%= pkg.paths.tmp %>/<%= pkg.paths.source %>/js/{,*/}*.js',
+      options: { livereload: true, spawn: false }
+    },
 
     sass: {
       files: '<%= pkg.paths.source %>/scss/{,*/}*.scss',

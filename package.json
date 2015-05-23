@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/garthenweb/lifebits#readme",
   "devDependencies": {
+    "babelify": "^6.1.1",
     "grunt": "^0.4.4",
     "grunt-autoprefixer": "^3.0.0",
+    "grunt-browserify": "^3.8.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-copy": "^0.8.0",
@@ -33,5 +35,8 @@
     "source": "public",
     "tmp": ".tmp",
     "tests": "tests"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
   }
 }
