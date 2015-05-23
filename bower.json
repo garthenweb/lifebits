@@ -1,0 +1,17 @@
+{
+  "name": "lifebits",
+  "version": "1.0.0",
+  "authors": [
+    "garthenweb <jannick.garthen@gmail.com>"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

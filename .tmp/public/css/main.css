@@ -1,0 +1,47 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px;
+  line-height: 1.8; }
+
+body {
+  scroll-behavior: smooth; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  font-size: inherit;
+  font-weight: normal; }
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+button {
+  background: transparent;
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none; }
+  button[disabled] {
+    cursor: auto; }
+  button::-moz-focus-inner {
+    border: none; }
+
+blockquote {
+  margin: 0;
+  font-style: italic;
+  font-family: "Times New Roman", serif;
+  font-size: rem-calc(32); }
+  blockquote:before {
+    content: "„"; }
+  blockquote:after {
+    content: "“"; }
+
+address {
+  font-style: normal; }
+
+code {
+  font-family: Consolas, monospace; }
