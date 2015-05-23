@@ -4,3 +4,16 @@
 .display-block { display: block; }
 .display-none { display: none; }
 .display-box { display: box; }
+.stripe {
+  display: inline-block;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: auto;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: #e7e7e7;
+  color: #333333;
+}
