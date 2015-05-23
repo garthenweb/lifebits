@@ -6,6 +6,7 @@ module.exports = function(grunt) {
       options: {
         port: 8080,
         hostname: '*',
+        livereload: true,
         base: {
           path: '<%= pkg.paths.tmp %>/<%= pkg.paths.source %>'
         }
