@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -56,4 +58,8 @@ address {
 
 code {
   font-family: Consolas, monospace;
+}
+img {
+  width:100%;
+  height: auto;
 }

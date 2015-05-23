@@ -1,0 +1,31 @@
+.stage {
+  position: relative;
+  .stage-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .stage-profile {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+  }
+  .stage-profile-img {
+    max-width: 52px;
+    border-radius: 50%;
+    border: 4px solid rgba(100,100,100,0.5);
+    float: right;
+    position: relative;
+  }
+  .stage-profile-name {
+    width: auto;
+    line-height: 44px;
+    padding: 0 70px 0 20px;
+    height: 44px;
+    border-radius: 22px;
+    background: #fff;
+    position: absolute;
+    top: 4px;
+    right: 0;
+  }
+}
