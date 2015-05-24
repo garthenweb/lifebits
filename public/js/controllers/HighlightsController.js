@@ -40,7 +40,7 @@ export default React.createClass({
       activity: [],
       user: {},
       locations: [],
-      track: {}
+      track: null
     };
   },
 
@@ -105,7 +105,12 @@ export default React.createClass({
             <div className="rotate">
                 <img src="img/img_soundcloud_wave2.png" alt="" />
                 <div className="play-button" onClick={ this._playTrack.bind(this) }></div>
-                { renderTrack(this.state.track) }
+                { this.state.track && renderTrack(this.state.track) }
+                { this.state.track &&
+                  <div className="track-name">
+                    {this.state.track.title}
+                  </div>
+                }
             </div>
             </div>
           </div>

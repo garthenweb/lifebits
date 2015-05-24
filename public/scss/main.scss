@@ -21,3 +21,20 @@ $modules: ("global");
 @import "_visibility";
 @import "_background";
 // @import "_labels";
+
+.track-name {
+  text-align: left;
+  position: absolute;
+  left: 133px;
+  top: 95px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #fff;
+  max-width: 30%;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 15px;
+}
