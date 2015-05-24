@@ -35,3 +35,7 @@ server.key.org
 ca.key
 ca.csr
 ca.crt
+
+designWIP/main_view-v2.psd
+
+*.psd

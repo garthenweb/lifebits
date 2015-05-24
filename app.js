@@ -52,7 +52,6 @@ function getAuthHeader() {
 
 
 app.get('/v1/users/me/activities', function(req, res) {
-  console.log(token);
   request.get({
     url: LIFELOG_GET_ACTIVITIES,
     headers: getAuthHeader()
@@ -68,7 +67,7 @@ app.use(function(req, res) {
   var file = __dirname + '/public/index.html';
   fs.readFile(file, { encoding: 'utf8'}, function(err, data) {
     res.setHeader('Content-Length', data.length);
-    res.end(data);
+    res.send(data);
   });
 });
 

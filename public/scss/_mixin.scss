@@ -1,0 +1,28 @@
+.thepad {
+	padding-top: 20%;
+}
+.custom-panel {
+  @include panel(
+    // Sets the panel background color. Default: $panel-pg
+    $bg:orange,
+    // Sets the panel padding amount. Default: $panel-padding
+    $padding:200px,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    $adjust:true
+  );
+}
+.custom-button {
+  @include panel(
+    // Sets the panel background color. Default: $panel-pg
+    // $bg:orange,
+    // Sets the panel padding amount. Default: $panel-padding
+    // $padding:20px,
+    // Sets the font color based on the darkness of the bg & resets header line-heights for panels. Default: $panel-header-adjust
+    // $adjust:true
+  );
+}
+.stripe {
+	$height: 50px;
+	$bg: #000;
+	z-index:10000;
+}
