@@ -2,6 +2,14 @@
  * Foundation imports
  * @see vendor/foundation/scss/foundation/_settings.scss
  */
-$include-open-sans: false;
+$include-open-sans: true;
 $include-html-classes: false;
 $include-html-grid-classes: true;
+$include-html-button-classes: true;
+$include-html-alert-classes: true;
+$include-html-visibility-classes: true;
+$button-font-family: include-open-sans;
+$include-html-form-classes: true;
+$include-html-label-classes: true;
+$include-html-media-classes: true;
+$panel-margin-bottom: rem-calc(20);
