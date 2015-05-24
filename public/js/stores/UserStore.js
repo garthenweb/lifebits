@@ -1,6 +1,4 @@
 'use strict';
-let url = require('url');
-let querystring = require('querystring');
 
 function json(response) {
   return response.json();

@@ -14,7 +14,7 @@ function loadMap(state) {
   let lat = location.position.latitude;
   let long = location.position.longitude;
   let latlong = lat + ',' + long;
-  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=20&size=800x450&maptype=roadmap&markers=${latlong}`;
+  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=19&size=800x450&maptype=roadmap&markers=${latlong}`;
 
   return <img className="small-12 columns" src={ mapApi } />;
 
@@ -26,11 +26,20 @@ export default React.createClass({
     return {
       activity: [],
       user: {},
-      locations: []
+      locations: [],
+      track: {}
     };
   },
 
   componentDidMount() {
+    // find all sounds of buskers licensed under 'creative commons share alike'
+    SC.get('/tracks', { genres: 'HipHop', bpm: { from: 80, to: 90 } }, (tracks) => {
+      console.log(tracks);
+      this.setState({
+        track: tracks[0]
+      });
+    });
+
     UserStore
       .fetchActivity()
       .then((data) => {
