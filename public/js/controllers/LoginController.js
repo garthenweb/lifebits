@@ -22,10 +22,14 @@ export default React.createClass({
             <a href="#" className="close">&times;</a>
           </div>
 
+            <div className="row logoclear">
+              <img src="/img/logo.png" className="logo"/>
+            </div>
+
           <div className="row">
-            <div className="small-12 small-centered column">
+            <div className="small-12 small-centered column display-none">
               <div className="panel callout radius visibility-hidden">
-                <p className="thepad">&nbsp;</p>
+                <p className="thepad"></p>
               </div>
             </div>
           </div>
