@@ -76,13 +76,16 @@ export default React.createClass({
             <figure className="stage-background">
               <img className="stage-background-img" src="img/img_czech.png" alt="" />
             </figure>
-            <h1 className="stage-headline rotate"><span className="box-shadow"><span>Geil, ein Hackathon! Da bin ich voll dabei!</span></span></h1>
+            <h1 className="stage-headline rotate"><span className="box-shadow"><span>Geil, ein Hackathon!<br />Da bin ich dabei!</span></span></h1>
             <figure className="stage-profile small-4">
               <figcaption className="stage-profile-name">{ this.state.user.username }</figcaption>
               <img className="stage-profile-img" src="//lorempixel.com/45/45/people" />
             </figure>
-            <div className="stage-player rotate">
-              <iframe width="100%" height="166" scrolling="no" frameBorder="no" src="//w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/25440642&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+            <div className="stage-player">
+            <div className="rotate">
+                <img src="img/img_soundcloud_wave2.png" alt="" />
+                <div className="play-button"></div>
+            </div>
             </div>
           </div>
         </header>

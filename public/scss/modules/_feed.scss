@@ -37,10 +37,16 @@
     text-align: right;
     vertical-align: top;
     margin: 0 0 20px;
+    span {
+      display: block;
+      float: left;
+      width: 80%;
+      padding-right: 20px;
+    }
     img {
+      display: block;
       height: 48px;
       width: 48px;
-      margin-left: 20px;
     }
   }
 }
