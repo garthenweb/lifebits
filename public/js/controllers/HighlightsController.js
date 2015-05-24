@@ -4,6 +4,22 @@ import React from 'react';
 
 import UserStore from '../stores/UserStore';
 
+function loadMap(state) {
+
+  let location = state && state.locations[0];
+  if(!location) {
+    return;
+  }
+
+  let lat = location.position.latitude;
+  let long = location.position.longitude;
+  let latlong = lat + ',' + long;
+  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=20&size=800x450&maptype=roadmap&markers=${latlong}`;
+
+  return <img className="small-12 columns" src={ mapApi } />;
+
+}
+
 export default React.createClass({
 
   getInitialState() {
@@ -18,6 +34,7 @@ export default React.createClass({
     UserStore
       .fetchActivity()
       .then((data) => {
+        console.log('activity', data.result);
         this.setState({
           activity: data.result
         });
@@ -26,6 +43,7 @@ export default React.createClass({
     UserStore
       .fetchProfile()
       .then((data) => {
+        console.log('user', data.result[0]);
         this.setState({
           user: data.result[0]
         });
@@ -34,6 +52,7 @@ export default React.createClass({
     UserStore
       .fetchLocation()
       .then((data) => {
+        console.log('locations', data.result);
         this.setState({
           locations: data.result
         });
@@ -74,7 +93,7 @@ export default React.createClass({
               <ul>
                 <li>
                   <span className="time small-11 small-offset-1 end columns">11:30pm</span>
-                  <iframe className="small-12 columns" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2370.0715052044925!2d9.923228999999989!3d53.556490999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b18591a7ba85b1%3A0x711b9bb8b7cfc714!2sWerkheim+Hamburg!5e0!3m2!1sde!2sde!4v1432417969029" width="100%" height="450" frameBorder="0"></iframe>
+                  { loadMap(this.state) }
                 </li>
                 <li>
                 <span className="time small-11 small-offset-1 end columns">14.34pm</span>
