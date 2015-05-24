@@ -30,23 +30,24 @@
   }
 }
 .log-activity {
-  font-size: 22px;
+  font-size: 16px;
+  margin-top: -60px;
   li {
-    line-height: 48px;
-    height: 48px;
+    line-height: 35px;
+    height: 35px;
     text-align: right;
     vertical-align: top;
-    margin: 0 0 20px;
+    margin: 0 0 10px;
     span {
       display: block;
       float: left;
-      width: 80%;
+      width: 88%;
       padding-right: 20px;
     }
     img {
       display: block;
-      height: 48px;
-      width: 48px;
+      height: 35px;
+      width: 35px;
     }
   }
 }
