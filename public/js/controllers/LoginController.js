@@ -40,8 +40,6 @@ export default React.createClass({
             </div>
           </div>
 
-          <span className="bar"></span>
-
         </div>
       </div>
     );

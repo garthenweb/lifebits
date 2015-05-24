@@ -25,6 +25,7 @@ function renderTrack(track) {
   if(!track || !track.id) {
     return;
   }
+  console.log(track);
   let trackId = track.id;
   let url = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false`;
   let style = { display: 'none' };
