@@ -32,7 +32,7 @@ export default React.createClass({
 
           <div className="row">
             <div className="small-5 small-centered column">
-            <LoginComponent />
+              <LoginComponent />
             </div>
           </div>
 

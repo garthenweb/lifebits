@@ -6,19 +6,21 @@ function json(response) {
   return response.json();
 }
 
+const PROFILE_URL   = '/v1/users/me';
 const ACTIVITIY_URL = '/v1/users/me/activities';
+const LOCATIONS_URL = '/v1/users/me/locations';
 let UserStore = {
 
   fetchActivity() {
-    // url.format({
-    //   href: ACTIVITIY_URL,
-    //   query: querystring.stringify()
-    // })
-    // console.log(getAuthHeader());
-    return window.fetch(ACTIVITIY_URL, {
-      // headers: getAuthHeader(),
-      // mode: 'cors'
-    });
+    return window.fetch(ACTIVITIY_URL).then(json);
+  },
+
+  fetchProfile() {
+    return window.fetch(PROFILE_URL).then(json);
+  },
+
+  fetchLocation() {
+    return window.fetch(LOCATIONS_URL).then(json);
   }
 
 };

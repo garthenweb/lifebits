@@ -21,7 +21,7 @@ export default React.createClass({
 
   render() {
     return (
-      <button className="button expand radius" onClick={this._openAuth}>Login</button>
+      <button className="button expand radius button-login" onClick={this._openAuth}>Login</button>
     );
   }
 });

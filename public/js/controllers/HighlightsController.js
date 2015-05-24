@@ -6,13 +6,36 @@ import UserStore from '../stores/UserStore';
 
 export default React.createClass({
 
+  getInitialState() {
+    return {
+      activity: [],
+      user: {},
+      locations: []
+    };
+  },
+
   componentDidMount() {
     UserStore
       .fetchActivity()
       .then((data) => {
-        console.log(data.result);
         this.setState({
           activity: data.result
+        });
+      });
+
+    UserStore
+      .fetchProfile()
+      .then((data) => {
+        this.setState({
+          user: data.result[0]
+        });
+      });
+
+    UserStore
+      .fetchLocation()
+      .then((data) => {
+        this.setState({
+          locations: data.result
         });
       });
   },
@@ -27,7 +50,7 @@ export default React.createClass({
             </figure>
             <h1 className="stage-headline rotate"><span className="box-shadow"><span>Geil, ein Hackathon! Da bin ich voll dabei!</span></span></h1>
             <figure className="stage-profile small-4">
-              <figcaption className="stage-profile-name">Profil Name</figcaption>
+              <figcaption className="stage-profile-name">{ this.state.user.username }</figcaption>
               <img className="stage-profile-img" src="//lorempixel.com/45/45/people" />
             </figure>
             <div className="stage-player rotate">

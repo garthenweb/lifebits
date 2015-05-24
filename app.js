@@ -8,7 +8,9 @@ var request = require('request');
 var locals  = require('./config/locals');
 
 var LIFELOG_CREATE_TOKEN = 'https://platform.lifelog.sonymobile.com/oauth/2/token';
+var LIFELOG_GET_USER = 'https://platform.lifelog.sonymobile.com/v1/users/me';
 var LIFELOG_GET_ACTIVITIES = 'https://platform.lifelog.sonymobile.com/v1/users/me/activities';
+var LIFELOG_GET_LOCATIONS = 'https://platform.lifelog.sonymobile.com/v1/users/me/locations';
 
 var token = null;
 var tokenCode  = null;
@@ -57,11 +59,29 @@ app.get('/v1/users/me/activities', function(req, res) {
     headers: getAuthHeader()
   }, function(err, resp, body) {
     res.setHeader('Content-Type', 'application/json');
-    res.setHeader('Content-Length', body.length);
     res.end(body);
   });
 });
 
+app.get('/v1/users/me', function(req, res) {
+  request.get({
+    url: LIFELOG_GET_USER,
+    headers: getAuthHeader()
+  }, function(err, resp, body) {
+    res.setHeader('Content-Type', 'application/json');
+    res.end(body);
+  });
+});
+
+app.get('/v1/users/me/locations', function(req, res) {
+  request.get({
+    url: LIFELOG_GET_LOCATIONS,
+    headers: getAuthHeader()
+  }, function(err, resp, body) {
+    res.setHeader('Content-Type', 'application/json');
+    res.end(body);
+  });
+});
 
 app.use(function(req, res) {
   var file = __dirname + '/public/index.html';

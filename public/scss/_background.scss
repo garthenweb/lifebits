@@ -6,11 +6,17 @@
   background-size: cover;
   height: 100%;
 }
+
 .pattern{
 	background-color:rgba(0,0,0,.5);
 	// padding-top:100px;
 	background-size:cover;
 	// background-repeat: repeat;
+}
+
+.button-login {
+  background: #ff5500;
+  font-family: "Open Sans";
 }
 
 .pattern.overlay {
