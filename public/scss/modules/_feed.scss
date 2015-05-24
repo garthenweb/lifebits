@@ -1,5 +1,6 @@
 .stream {
-  &:before {
+  position: relative;
+  &:after {
    content: "";
     height: 100%;
     width: 2px;
@@ -11,7 +12,7 @@
   li {
     margin: 0 0 30px;
     position: relative;
-    &:before {
+    /*&:before {
       content: "";
       position: absolute;
       top: 0;
@@ -21,7 +22,7 @@
       border: 2px solid #333;
       border-radius: 50%;
       background: #fff;
-    }
+    }*/
     .time {
       height: 44px;
       padding: 0 0 0 30px;
