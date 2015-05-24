@@ -95,7 +95,7 @@ export default React.createClass({
             <figure className="stage-background">
               <img className="stage-background-img" src="img/img_czech.png" alt="" />
             </figure>
-            <h1 className="stage-headline rotate"><span className="box-shadow"><span>Geil, ein Hackathon!<br />Da bin ich dabei!</span></span></h1>
+            <h1 className="stage-headline rotate"><span className="box-shadow"><span className="lines">Geil, ein Hackathon!<br />Da bin ich dabei!</span></span></h1>
             <figure className="stage-profile small-4">
               <figcaption className="stage-profile-name">{ this.state.user.username }</figcaption>
               <img className="stage-profile-img" src="//lorempixel.com/45/45/people" />
@@ -112,7 +112,7 @@ export default React.createClass({
 
         <main>
           <div className="row">
-            <div className="small-4 small-offset-8 end columns">
+            <div className="small-12 columns">
               <ul className="log-activity">
                 <li className="log-activity-steps">6543<img src="img/ic_steps.png" alt="" /></li>
                 <li className="log-activity-sleep">8h<img src="img/ic_sleep.png" alt="" /></li>

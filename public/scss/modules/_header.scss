@@ -13,11 +13,11 @@
     max-width: 75%;
     position: absolute;
     top: 100px;
-    left: 0;
+    left: 13px;
     .box-shadow {
       background: #fff;
-      span {
-        box-shadow: 20px 0 0 #fff, -200px 0 0 #fff;
+      .lines {
+        box-shadow: 20px 0 0 #fff, -100px 0 0 #fff;
       }
     }
   }
