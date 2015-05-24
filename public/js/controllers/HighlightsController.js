@@ -14,10 +14,22 @@ function loadMap(state) {
   let lat = location.position.latitude;
   let long = location.position.longitude;
   let latlong = lat + ',' + long;
-  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=19&size=800x450&maptype=roadmap&markers=${latlong}`;
+  let zoom = 18;
+  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=${zoom}&size=800x450&maptype=roadmap&markers=${latlong}`;
 
   return <img className="small-12 columns" src={ mapApi } />;
 
+}
+
+function renderTrack(track) {
+  if(!track || !track.id) {
+    return;
+  }
+  let trackId = track.id;
+  let url = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false`;
+  let style = { display: 'none' };
+  let frame = <iframe width="100%" height="450" scrolling="no" frameborder="no" src={url} style={style} ref="sctrack"></iframe>;
+  return frame;
 }
 
 export default React.createClass({
@@ -34,7 +46,6 @@ export default React.createClass({
   componentDidMount() {
     // find all sounds of buskers licensed under 'creative commons share alike'
     SC.get('/tracks', { genres: 'HipHop', bpm: { from: 80, to: 90 } }, (tracks) => {
-      console.log(tracks);
       this.setState({
         track: tracks[0]
       });
@@ -68,6 +79,14 @@ export default React.createClass({
       });
   },
 
+  _playTrack() {
+    let ref = this.refs.sctrack;
+    let node = React.findDOMNode(ref);
+
+    let SCWidget = SC.Widget(node);
+    SCWidget.play();
+  },
+
   render() {
     return (
       <div>
@@ -84,7 +103,8 @@ export default React.createClass({
             <div className="stage-player">
             <div className="rotate">
                 <img src="img/img_soundcloud_wave2.png" alt="" />
-                <div className="play-button"></div>
+                <div className="play-button" onClick={ this._playTrack.bind(this) }></div>
+                { renderTrack(this.state.track) }
             </div>
             </div>
           </div>
