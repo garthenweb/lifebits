@@ -1,7 +1,6 @@
 .stage {
   position: relative;
   font-size: 22px;
-  min-height: 750px;
   .stage-background {
     width: 100%;
     overflow: hidden;
@@ -24,8 +23,8 @@
   }
   .stage-profile {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 20px;
+    right: 20px;
   }
   .stage-profile-img {
     max-width: 52px;
@@ -48,17 +47,18 @@
   .stage-player {
     position: absolute;
     left: -100px;
-    bottom: -236px;
+    bottom: 0;
     width: 1079px;
-    height: 450px;
+    height: 300px;
     overflow: hidden;
     .play-button {
       position: absolute;
       background: url("/img/btn_play_normal.png") no-repeat;
-      height: 96px;
-      width: 97px;
-      top: 128px;
-      left: 87px;
+      height: 45px;
+      width: 45px;
+      background-size: contain;
+      top: 91px;
+      left: 84px;
       transform: rotate(20deg);
       transition: background 0.5s ease;
       &:hover {
@@ -66,8 +66,8 @@
       }
     }
     .rotate {
-      width: 1391px;
-      height: 354px;
+      width: 900px;
+      height: auto;
     }
   }
   .rotate {
