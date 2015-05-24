@@ -84,7 +84,7 @@ export default React.createClass({
     let node = React.findDOMNode(ref);
 
     let SCWidget = SC.Widget(node);
-    SCWidget.play();
+    SCWidget.toggle();
   },
 
   render() {
