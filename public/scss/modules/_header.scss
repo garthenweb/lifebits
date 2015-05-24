@@ -1,25 +1,18 @@
 .stage {
   position: relative;
   font-size: 22px;
-  min-height: 750px;
   .stage-background {
     width: 100%;
     overflow: hidden;
     text-align: center;
-    .stage-background-img {
-      position: absolute;
-      min-height: 750px;
-      left: 50%;
-      transform: translate(-50%,0);
-    }
   }
   .stage-headline {
-    font-size: 56px;
+    font-size: 28px;
     font-weight: 800;
-    line-height: 75px;
+    line-height: 40px;
     max-width: 75%;
     position: absolute;
-    top: 45%;
+    top: 100px;
     left: 0;
     .box-shadow {
       background: #fff;
@@ -30,8 +23,8 @@
   }
   .stage-profile {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 20px;
+    right: 20px;
   }
   .stage-profile-img {
     max-width: 52px;
@@ -53,11 +46,29 @@
   }
   .stage-player {
     position: absolute;
-    left: 0;
-    bottom: 10px;
-    width: 100%;
-    height: 166px;
-    box-shadow: 100px 200px 0px 200px #fff;
+    left: -100px;
+    bottom: 0;
+    width: 1079px;
+    height: 300px;
+    overflow: hidden;
+    .play-button {
+      position: absolute;
+      background: url("/img/btn_play_normal.png") no-repeat;
+      height: 45px;
+      width: 45px;
+      background-size: contain;
+      top: 91px;
+      left: 84px;
+      transform: rotate(20deg);
+      transition: background 0.5s ease;
+      &:hover {
+        background: url("/img/btn_play_hover.png") no-repeat;
+      }
+    }
+    .rotate {
+      width: 900px;
+      height: auto;
+    }
   }
   .rotate {
     transform: rotate(-20deg);

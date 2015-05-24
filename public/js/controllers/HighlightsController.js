@@ -14,10 +14,22 @@ function loadMap(state) {
   let lat = location.position.latitude;
   let long = location.position.longitude;
   let latlong = lat + ',' + long;
-  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=20&size=800x450&maptype=roadmap&markers=${latlong}`;
+  let zoom = 18;
+  let mapApi = `https://maps.googleapis.com/maps/api/staticmap?center=${latlong}&zoom=${zoom}&size=800x450&maptype=roadmap&markers=${latlong}`;
 
   return <img className="small-12 columns" src={ mapApi } />;
 
+}
+
+function renderTrack(track) {
+  if(!track || !track.id) {
+    return;
+  }
+  let trackId = track.id;
+  let url = `https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${trackId}&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;visual=false`;
+  let style = { display: 'none' };
+  let frame = <iframe width="100%" height="450" scrolling="no" frameborder="no" src={url} style={style} ref="sctrack"></iframe>;
+  return frame;
 }
 
 export default React.createClass({
@@ -26,11 +38,19 @@ export default React.createClass({
     return {
       activity: [],
       user: {},
-      locations: []
+      locations: [],
+      track: {}
     };
   },
 
   componentDidMount() {
+    // find all sounds of buskers licensed under 'creative commons share alike'
+    SC.get('/tracks', { genres: 'HipHop', bpm: { from: 80, to: 90 } }, (tracks) => {
+      this.setState({
+        track: tracks[0]
+      });
+    });
+
     UserStore
       .fetchActivity()
       .then((data) => {
@@ -59,6 +79,14 @@ export default React.createClass({
       });
   },
 
+  _playTrack() {
+    let ref = this.refs.sctrack;
+    let node = React.findDOMNode(ref);
+
+    let SCWidget = SC.Widget(node);
+    SCWidget.play();
+  },
+
   render() {
     return (
       <div>
@@ -67,13 +95,17 @@ export default React.createClass({
             <figure className="stage-background">
               <img className="stage-background-img" src="img/img_czech.png" alt="" />
             </figure>
-            <h1 className="stage-headline rotate"><span className="box-shadow"><span>Geil, ein Hackathon! Da bin ich voll dabei!</span></span></h1>
+            <h1 className="stage-headline rotate"><span className="box-shadow"><span>Geil, ein Hackathon!<br />Da bin ich dabei!</span></span></h1>
             <figure className="stage-profile small-4">
               <figcaption className="stage-profile-name">{ this.state.user.username }</figcaption>
               <img className="stage-profile-img" src="//lorempixel.com/45/45/people" />
             </figure>
-            <div className="stage-player rotate">
-              <iframe width="100%" height="166" scrolling="no" frameBorder="no" src="//w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/25440642&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+            <div className="stage-player">
+            <div className="rotate">
+                <img src="img/img_soundcloud_wave2.png" alt="" />
+                <div className="play-button" onClick={ this._playTrack.bind(this) }></div>
+                { renderTrack(this.state.track) }
+            </div>
             </div>
           </div>
         </header>
