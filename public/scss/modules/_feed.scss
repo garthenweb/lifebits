@@ -8,6 +8,25 @@
     top: -69px;
     background-color: #333;
   }
+  li {
+    margin: 0 0 30px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 89px;
+      height: 18px;
+      width: 18px;
+      border: 2px solid #333;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .time {
+      height: 44px;
+      padding: 0 0 0 30px;
+    }
+  }
 }
 .log-activity {
   font-size: 22px;
