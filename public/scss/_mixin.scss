@@ -33,11 +33,30 @@
   $text-decoration: none;
   $white-space: nowrap;
   $background-color: #000;
-  $color: #8e908f; 
-  $opacity: 0.5; 
-  $padding: 2rem 50rem 2rem 1rem; 
+  $color: #8e908f;
+  $opacity: 0.5;
+  $padding: 2rem 50rem 2rem 1rem;
   $margin-top: 10%;
 }
 .logo {
   width: 40px;
+}
+
+
+.bar {
+  display: block;
+  line-height: 4;
+  margin: auto;
+  font-size: 22px;
+  font-family: Open Sans;
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: #000;
+  color: #8e908f;
+  opacity: 0.5;
+  padding: 2rem 50rem 2rem 1rem;
+  margin-top: 10%;
 }
